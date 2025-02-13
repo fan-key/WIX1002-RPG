@@ -1,5 +1,6 @@
 public class Hero {
     String name;
+    double maxHp;
     double hp;
     double attack;
     double defense;
@@ -10,6 +11,7 @@ public class Hero {
     Hero(String name ,double hp, double attack, double defense, String element, int speed){
         this.name = name;
         this.hp = hp;
+        this.maxHp = hp;
         this.attack = attack;
         this.defense = defense;
         this.element = element;
@@ -23,14 +25,6 @@ public class Hero {
         }
     }
 
-    public void attack(Hero enemy){
-        double damage = attack - enemy.defense;
-        if(damage < 0){
-            damage = 0;
-        }
-        enemy.getDamage(damage);
-    }
-
     public void resetInitialSpeed(){
         intialSpeed = 100;
     }
@@ -42,11 +36,17 @@ public class Hero {
         }   
     }
 
+    public void heal(double heal){
+        hp += heal;
+    }
+
 
 
     public void setHp(double hp){
         this.hp = hp;
     }
+
+
 
     public void setAttack(double attack){
         this.attack = attack;
@@ -68,6 +68,10 @@ public class Hero {
         return hp;
     }
 
+    public double getMaxHp(){
+        return maxHp;
+    }
+
     public double getAttack(){
         return attack;
     }
@@ -86,5 +90,9 @@ public class Hero {
 
     public int getIntialSpeed(){
         return intialSpeed;
+    }
+
+    public String toString(){
+        return "Name: " + name + "\nHP: " + hp + "\nAttack: " + attack + "\nDefense: " + defense + "\nElement: " + element + "\nSpeed: " + speed;
     }
 }
