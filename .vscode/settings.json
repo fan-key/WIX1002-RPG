@@ -1,7 +1,10 @@
 {
-    "java.project.sourcePaths": ["src"],
+    "java.project.sourcePaths": [
+        "src"
+    ],
     "java.project.outputPath": "bin",
     "java.project.referencedLibraries": [
-        "lib/**/*.jar"
-    ]
+        "c:\\Users\\arfan\\Desktop\\mysql-connector-j-9.1.0.jar"
+    ],
+    "liveServer.settings.port": 5501
 }

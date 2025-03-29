@@ -77,6 +77,11 @@ public class Battle {
             
             case 2: 
                 int itemChoice = 0;
+
+                if(items.get(0).getQuantity() == 0 && items.get(1).getQuantity() == 0 && items.get(2).getQuantity() == 0){
+                    System.out.println("You have no more items left!");
+                    break;
+                }
                 do{ 
                     System.out.println("Items: ");
                     for(Item item : items){
@@ -87,9 +92,7 @@ public class Battle {
 
                     if(items.get(itemChoice-1).getQuantity() == 0){
                         System.out.println("You have no more " + items.get(itemChoice-1).getName() + " left!");
-                        return;
                     }
-                    
 
                 }while(items.get(itemChoice-1).getQuantity() == 0);
                 items.get(itemChoice-1).use(hero);

@@ -18,6 +18,10 @@ public class Hero {
         this.speed = speed;   
     }
 
+    public void useItem(Item item){
+        item.use(this);
+    }
+
     public void getDamage(double damage){
         hp -= damage;
         if(hp < 0){
